@@ -1,0 +1,4 @@
+FROM app
+COPY . .
+RUN npm install -g mocha
+CMD ["mocha", "test/test-pages.js", "--reporter", "spec"]
