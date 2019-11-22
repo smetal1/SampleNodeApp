@@ -22,5 +22,12 @@ pipeline {
           sh "docker push $DOCKER_CREDS_USR/testnodeapp:latest"
         }
       }
+
+       stage('Deployment') {
+      steps {
+          sh "kubectl delete -f deployment.yaml --insecure-skip-tls-verify"
+            sh "kubectl apply -f deployment.yaml --insecure-skip-tls-verify"
+        }
+      }
   }
 }
