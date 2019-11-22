@@ -1,0 +1,20 @@
+sonar-scanner -Dsonar.projectKey=demo-node -Dsonar.sources=. -Dsonar.host.url=http://sonar.getlend.in -Dsonar.login=9c4d2ffcb6fb6f8f57d485c3b698ba1375d736eb
+ docker build -t app -f Dockerfile.app .
+ docker run -d -p 3000:3000  --name=app app
+ docker build -t test -f Dockerfile.test .
+ docker run --rm test
+ docker stop app
+ docker rm app
+ docker login -u saurav7055 -p P@ssw0rd123
+ docker tag app saurav7055/node-js-sample-app:latest
+ docker push saurav7055/node-js-sample-app:latest
+
+
+
+
+
+ sonar-scanner \
+  -Dsonar.projectKey=jenkins-demo \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://sonar.getlend.in \
+  -Dsonar.login=d9926a182b1b40570836f7f58952021d560beb4e
