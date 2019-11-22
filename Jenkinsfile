@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Docker Build Image') {
       steps {
-          sh "docker build -t $DOCKER_CREDS_USR/testnodeapp:${env.BUILD_ID} -t saurav7055/testnodeapp:latest ."
+          sh "docker build -t $DOCKER_CREDS_USR/testnodeapp:${env.BUILD_ID} -t saurav7055/testnodeapp:latest -f Dockerfile.app ."
 
       }
     }
