@@ -9,3 +9,5 @@ kubectl apply -f deployment.yaml --insecure-skip-tls-verify
 
 
 ====== Screenshots will be updated soon =======
+
+.
